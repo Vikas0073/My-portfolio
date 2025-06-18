@@ -446,29 +446,26 @@
    <script src="script.js "></script>
 
     <!-- Add EmailJS CDN -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-  window.onload = function () {
-    emailjs.init("fNftQJuN0QpaGFJet");
-  };
+<!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
+<!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+<script type="module">
+  import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
 
-  function sendMail(event) {
+  emailjs.init("fNftQJuN0QpaGFJet");
+
+  window.sendMail = function (event) {
     event.preventDefault();
 
-    emailjs.sendForm("service_or20724", "template_quq3fdb", event.target, "fNftQJuN0QpaGFJet")
+    emailjs.sendForm("service_or20724", "template_quq3fdb", event.target)
       .then(() => {
-        // ✅ Show Bootstrap Success Modal
         const successModal = new bootstrap.Modal(document.getElementById('successModal'));
         successModal.show();
-
-        // ✅ Optionally reset the form
         event.target.reset();
       }, (error) => {
         console.error("EmailJS Error:", error);
         alert("Error sending message. Check console for details.");
       });
-  }
+  };
 </script>
 
 
