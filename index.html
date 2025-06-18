@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="google-adsense-account" content="ca-pub-7348685208138028">
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 
   <!-- <meta name="theme-color" content="#1bb566"> -->
@@ -436,7 +437,7 @@
   function sendMail(event) {
     event.preventDefault();
 
-    emailjs.sendForm("service_or20724", "template_quq3fdb", event.target)
+    emailjs.sendForm("service_or20724", "template_quq3fdb", event.target, "fNftQJuN0QpaGFJet"  )
       .then(() => {
         alert("Message sent successfully!");
       }, (error) => {
