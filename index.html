@@ -428,23 +428,24 @@
     <!-- Add EmailJS CDN -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<script>
-  (function(){
-    emailjs.init("fNftQJuN0QpaGFJet"); // Replace with your actual EmailJS public key
-  })();
+<script type="text/javascript">
+  window.onload = function () {
+    emailjs.init("fNftQJuN0QpaGFJet");
+  };
 
   function sendMail(event) {
-    event.preventDefault(); // Prevent form from reloading
+    event.preventDefault();
 
-    emailjs.sendForm("service_or20724", "template_quq3fdb", event.target, "fNftQJuN0QpaGFJet")
+    emailjs.sendForm("service_or20724", "template_quq3fdb", event.target)
       .then(() => {
         alert("Message sent successfully!");
       }, (error) => {
-        alert("Error sending message. Try again later.");
         console.error("EmailJS Error:", error);
+        alert("Error sending message. Check console for details.");
       });
   }
 </script>
+
 <script>
   // Add click event to all education cards
   document.querySelectorAll(".edu-card").forEach(card => {
@@ -456,7 +457,8 @@
     });
   });
 </script>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7348685208138028"
+     crossorigin="anonymous"></script>
 </body>
 </html>
 
