@@ -452,19 +452,19 @@
 <script type="module">
   import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
 
-  emailjs.init("fNftQJuN0QpaGFJet");
+  emailjs.init("fNftQJuN0QpaGFJet"); // your public key
 
-  window.sendMail = function (event) {
+  window.sendMail = function(event) {
     event.preventDefault();
 
-    emailjs.sendForm("service_or20724", "template_quq3fdb", event.target)
+    emailjs.sendForm('service_or20724', 'template_quq3fdb', event.target)
       .then(() => {
-        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-        successModal.show();
-        event.target.reset();
-      }, (error) => {
-        console.error("EmailJS Error:", error);
-        alert("Error sending message. Check console for details.");
+        // Show modal or confirmation
+        alert('Message sent successfully!');
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        alert('Error sending message. Please try again.');
       });
   };
 </script>
