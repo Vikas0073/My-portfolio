@@ -408,14 +408,15 @@
 
 <!-- Footer -->
 <footer id="sticky-footer" class="flex-shrink-0 py-4 text-white-50 mt-3" style="background-color: #03081f;">
-  <div class="container">
-<<<<<<< HEAD
-=======
-    <p>👀 Visitors: <span id="visitCount">0</span></p>
+  <div class="container text-center">
 
-    
->>>>>>> c4c0173 (Initial commit / update portfolio)
-    <div class="d-flex justify-content-center">
+    <!-- ✅ Attractive Visitor Counter -->
+    <p class="visitor-counter">
+      <i class="fa-solid fa-fire text-danger"></i> Visitors: <span id="visitCount">0</span>
+    </p>
+
+    <!-- Social Icons -->
+    <div class="d-flex justify-content-center mt-3">
       <a href="https://facebook.com" class="border border-primary rounded-circle text-primary mx-2 d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;" target="_blank"><i class="bi bi-facebook"></i></a>
       <a href="https://twitter.com" class="border border-primary rounded-circle text-primary mx-2 d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;" target="_blank"><i class="bi bi-twitter"></i></a>
       <a href="https://www.linkedin.com/in/vikas-nagar-56628628a" class="border border-primary rounded-circle text-primary mx-2 d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;" target="_blank"><i class="bi bi-linkedin"></i></a>
@@ -423,20 +424,22 @@
       <a href="https://www.instagram.com/vikasnagar__007?igsh=OHlkbzV1MDc1aWt5" class="border border-primary rounded-circle text-primary mx-2 d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;" target="_blank"><i class="bi bi-instagram"></i></a>
     </div>
   </div>
-</footer>
-
-<<<<<<< HEAD
-=======
-<script>
+</footer><script>
   fetch("https://api.counterapi.dev/v1/vikas_portfolio/visitor_count/up")
     .then(res => res.json())
     .then(res => {
-      document.getElementById("visitCount").innerText = res.count;
+      let target = res.count;
+      let current = 0;
+      let counterElement = document.getElementById("visitCount");
+
+      let interval = setInterval(() => {
+        current++;
+        counterElement.innerText = current;
+        if (current >= target) clearInterval(interval);
+      }, 30); // Speed of counting
     })
     .catch(err => console.error("Counter API error:", err));
 </script>
-
->>>>>>> c4c0173 (Initial commit / update portfolio)
 <!-- Bootstrap Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
