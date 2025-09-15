@@ -287,10 +287,10 @@ body {
   color: #fff;
   font-weight: 600;
 }
-
+/* 
 @keyframes pulse {
   0% { box-shadow: 0 0 5px #00f7ff; }
   50% { box-shadow: 0 0 25px #00f7ff, 0 0 50px #00f7ff; }
   100% { box-shadow: 0 0 5px #00f7ff; }
-}
+} */
 
