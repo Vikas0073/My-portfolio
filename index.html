@@ -409,6 +409,12 @@
 <!-- Footer -->
 <footer id="sticky-footer" class="flex-shrink-0 py-4 text-white-50 mt-3" style="background-color: #03081f;">
   <div class="container">
+<<<<<<< HEAD
+=======
+    <p>👀 Visitors: <span id="visitCount">0</span></p>
+
+    
+>>>>>>> c4c0173 (Initial commit / update portfolio)
     <div class="d-flex justify-content-center">
       <a href="https://facebook.com" class="border border-primary rounded-circle text-primary mx-2 d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;" target="_blank"><i class="bi bi-facebook"></i></a>
       <a href="https://twitter.com" class="border border-primary rounded-circle text-primary mx-2 d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;" target="_blank"><i class="bi bi-twitter"></i></a>
@@ -419,6 +425,18 @@
   </div>
 </footer>
 
+<<<<<<< HEAD
+=======
+<script>
+  fetch("https://api.counterapi.dev/v1/vikas_portfolio/visitor_count/up")
+    .then(res => res.json())
+    .then(res => {
+      document.getElementById("visitCount").innerText = res.count;
+    })
+    .catch(err => console.error("Counter API error:", err));
+</script>
+
+>>>>>>> c4c0173 (Initial commit / update portfolio)
 <!-- Bootstrap Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
